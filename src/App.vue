@@ -10,17 +10,22 @@
 
     <md-layout md-gutter md-align="center" style="padding-top:10px;">
       <md-layout md-flex-xsmall="80" md-flex-small="60" md-flex-medium="50" md-flex-large="40">
-        <router-view></router-view>
+        <router-view style="width:100%;"></router-view>
       </md-layout>
     </md-layout>
+
+    <div style="width:100%;height:60px;background-color:black;margin-top:20px;">
+    
+    </div>
 
     <div class="modal trigerBlock " :class="{ triggerNone : menu }">
       <md-button class="md-icon-button close" @click="menu = true">
         <md-icon class="md-size-2x">close</md-icon>
       </md-button>
       <div style="">
-        <button class="menu-btn">Kirim permintaan cuti</button>
-        <button class="menu-btn">Aktif kuliah</button>
+        <button @click.prevent = "goMenu('/home/profile')" class="menu-btn">Profile</button>
+        <button @click.prevent = "goMenu('/home/cuti')" class="menu-btn">Cuti</button>
+        <button @click.prevent = "goMenu('/home/aktif')" class="menu-btn">Aktif kuliah</button>
         <button class="menu-btn" @click.prevent = "logout()">logout</button>
       </div>
     </div>
@@ -44,6 +49,10 @@ export default {
       })
       this.menu = true
       this.$router.push('/login')
+    },
+    goMenu (url) {
+      this.menu = true
+      this.$router.push(url)
     }
   }
 }
@@ -56,6 +65,7 @@ export default {
   background-color:rgba(0,0,0,0.85);
   position:fixed;
   top:0;
+  z-index:1;
 }
 
 .triggerBlock {

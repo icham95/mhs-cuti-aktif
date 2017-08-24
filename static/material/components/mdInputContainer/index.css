@@ -166,7 +166,7 @@
 .md-input-container.md-input-disabled label,
 .md-input-container.md-input-disabled input,
 .md-input-container.md-input-disabled textarea {
-  color: rgba(0, 0, 0, 0.38);
+  color: rgba(0, 0, 0, 0.70);
 }
 .md-input-container.md-has-password.md-input-focused .md-toggle-password {
   color: rgba(0, 0, 0, 0.54);

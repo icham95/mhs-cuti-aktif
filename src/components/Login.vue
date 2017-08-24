@@ -22,6 +22,7 @@
 
 <script>
   import { required, minLength } from 'vuelidate/lib/validators'
+
   export default {
     data () {
       return {
@@ -40,6 +41,7 @@
     },
     methods: {
       login () {
+        // this.$http.headers.common['Authorization'] = 'asdsad'
         this.$http.post('http://localhost/cutiff/api/mhs/login', {
           username: this.username,
           password: this.password
@@ -49,9 +51,10 @@
           if (resp.body.success === true) {
             this.$localStorage.set('auth', {
               logged: true,
-              token: resp.body.token
+              token: resp.body.token,
+              user: resp.body.user
             })
-            this.$router.push('/home')
+            this.$router.push('/home/profile')
           } else {
             this.$swal(
               'Ooops...',
@@ -68,7 +71,7 @@
     mounted () {
       let auth = this.$localStorage.get('auth')
       if (auth.logged === true) {
-        this.$router.push('/home')
+        this.$router.push('/home/profile')
       }
       // this.$swal('hello')
     }
