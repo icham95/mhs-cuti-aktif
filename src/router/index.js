@@ -3,11 +3,12 @@ import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Login from '@/components/Login'
 import Home from '@/components/Home'
-import Profile from '@/components/Profile'
+// import Profile from '@/components/Profile'
 import Cuti from '@/components/Cuti'
 import CreateCuti from '@/components/CreateCuti'
 import Aktif from '@/components/Aktif'
 import CreateAktif from '@/components/CreateAktif'
+import BaakPm from '@/components/BaakPm'
 
 Vue.use(Router)
 
@@ -28,11 +29,11 @@ export default new Router({
       name: 'home',
       component: Home,
       children: [
-        {
-          path: 'profile',
-          name: 'profile',
-          component: Profile
-        },
+        // {
+        //   path: 'profile',
+        //   name: 'profile',
+        //   component: Profile
+        // },
         {
           path: 'cuti',
           name: 'cuti',
@@ -52,6 +53,11 @@ export default new Router({
           path: 'create-aktif',
           name: 'CreateAktif',
           component: CreateAktif
+        },
+        {
+          path: 'baak-pm',
+          name: 'baakpm',
+          component: BaakPm
         }
       ]
     }

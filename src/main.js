@@ -10,10 +10,16 @@ import Vuelidate from 'vuelidate'
 import VueSocket from 'vue-socket.io'
 
 var VueMaterial = require('vue-material')
-
+const vueConfig = require('vue-config')
+var hostname = window.location.hostname
+// var origin = window.location.origin
+const configs = {
+  API: 'http://' + hostname + '/cutiff/'
+}
+Vue.use(vueConfig, configs)
 // store vuex
 import store from './store'
-Vue.use(VueSocket, 'http://localhost:7777', store)
+Vue.use(VueSocket, 'http://' + hostname + ':7777', store)
 
 Vue.use(VueSweetAlert)
 Vue.use(VueResource)
@@ -22,20 +28,24 @@ Vue.use(VueMaterial)
 Vue.use(Vuelidate)
 
 Vue.config.productionTip = false
-// Vue.use(VueLocalStorage)
-// // Or you can specify any other name and use it via this.$ls,
-// Vue.use(VueLocalStorage, {
-//   name: 'ls'
-// })
-
+// import Push from 'push.js'
 /* eslint-disable no-new */
 new Vue({
+  sockets: {
+    connect () {
+      this.$localStorage.set('sid', this.$socket.id)
+    }
+  },
   data () {
     return {
       testing: 'asdadsad'
     }
   },
   localStorage: {
+    sid: {
+      type: String,
+      default: null
+    },
     auth: {
       type: Object,
       default: {
