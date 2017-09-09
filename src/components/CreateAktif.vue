@@ -13,7 +13,7 @@
               <md-tooltip>Nama mahasiswa</md-tooltip>
             </md-icon>
             <label>Nama lengkap</label>
-            <md-input v-model="mhs.nama_lengkap"></md-input>
+            <md-input v-model="mhs.nama_lengkap" required></md-input>
           </md-input-container>
 
           <md-input-container class="input">
@@ -22,7 +22,7 @@
               <md-tooltip>NPM</md-tooltip>
             </md-icon>
             <label>NPM</label>
-            <md-input v-model="mhs.npm"></md-input>
+            <md-input type="number" required v-model="mhs.npm"></md-input>
           </md-input-container>
 
           <md-input-container class="input">
@@ -31,7 +31,7 @@
               <md-tooltip>Semester</md-tooltip>
             </md-icon>
             <label>Semester</label>
-            <md-input v-model="mhs.semester "></md-input>
+            <md-input type="number" required v-model="mhs.semester "></md-input>
           </md-input-container>
 
           <md-input-container class="input">
@@ -40,7 +40,7 @@
               <md-tooltip>Program studi</md-tooltip>
             </md-icon>
             <label>Program studi</label>
-            <md-input v-model="mhs.program_studi"></md-input>
+            <md-input required v-model="mhs.program_studi"></md-input>
           </md-input-container>
 
           <md-input-container class="input">
@@ -49,7 +49,7 @@
               <md-tooltip>tahun akademik</md-tooltip>
             </md-icon>
             <label>Tahun akademik</label>
-            <md-input v-model="mhs.tahun_akademik"></md-input>
+            <md-input required type="number" v-model="mhs.tahun_akademik"></md-input>
           </md-input-container>
           
           <md-input-container class="input">
@@ -58,7 +58,7 @@
               <md-tooltip>Nama orang tua</md-tooltip>
             </md-icon>
             <label>Nama orang tua</label>
-            <md-input v-model="mhs.nama_orang_tua_wali"></md-input>
+            <md-input required v-model="mhs.nama_orang_tua_wali"></md-input>
           </md-input-container>
           
           <md-input-container class="input">
@@ -67,7 +67,7 @@
               <md-tooltip>NRP / NIP</md-tooltip>
             </md-icon>
             <label>NIP/NRP</label>
-            <md-input v-model="mhs.nip_nrp "></md-input>
+            <md-input required v-model="mhs.nip_nrp "></md-input>
           </md-input-container>
 
           <md-input-container class="input">
@@ -76,7 +76,7 @@
               <md-tooltip>Pangkat</md-tooltip>
             </md-icon>
             <label>Pangkat</label>
-            <md-input v-model="mhs.pangkat"></md-input>
+            <md-input required v-model="mhs.pangkat"></md-input>
           </md-input-container>
 
           <md-input-container class="input">
@@ -85,7 +85,7 @@
               <md-tooltip>Golongan</md-tooltip>
             </md-icon>
             <label>Golongan</label>
-            <md-input v-model="mhs.golongan"></md-input>
+            <md-input required v-model="mhs.golongan"></md-input>
           </md-input-container>
 
           <md-input-container class="input">
@@ -94,7 +94,7 @@
               <md-tooltip>Instansi</md-tooltip>
             </md-icon>
             <label>Instansi</label>
-            <md-input v-model="mhs.instansi"></md-input>
+            <md-input required v-model="mhs.instansi"></md-input>
           </md-input-container>
 
           <md-input-container class="input">
@@ -103,7 +103,7 @@
               <md-tooltip>di</md-tooltip>
             </md-icon>
             <label>di</label>
-            <md-input v-model="mhs.di"></md-input>
+            <md-input required v-model="mhs.di"></md-input>
           </md-input-container>
         </div>
 

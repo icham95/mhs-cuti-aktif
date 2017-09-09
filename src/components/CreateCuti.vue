@@ -1,6 +1,6 @@
 <template>
-  <div style="width:75%;margin:0 auto;">
-    <md-card style="background-color:rgba(255,255,255, 0.6)">
+  <div style="width:90%;margin:0 auto;">
+    <md-card style="background-color:rgba(255,255,255, 0.9)">
       <md-card-header>
         <h2>Formulir permohonan cuti akademik</h2>
       </md-card-header>
@@ -12,7 +12,7 @@
               <md-tooltip>Nama mahasiswa</md-tooltip>
             </md-icon>
             <label>Nama lengkap</label>
-            <md-input v-model="mhs.nama_lengkap"></md-input>
+            <md-input v-model="mhs.nama_lengkap" required></md-input>
           </md-input-container>
 
           <md-input-container class="input">
@@ -21,7 +21,7 @@
               <md-tooltip>NPM</md-tooltip>
             </md-icon>
             <label>NPM</label>
-            <md-input v-model="mhs.npm"></md-input>
+            <md-input type="number" v-model="mhs.npm" required></md-input>
           </md-input-container>
 
           <md-input-container class="input">
@@ -30,7 +30,7 @@
               <md-tooltip>Program studi</md-tooltip>
             </md-icon>
             <label>Program studi</label>
-            <md-input  v-model="mhs.program_studi"></md-input>
+            <md-input  v-model="mhs.program_studi" required></md-input>
           </md-input-container>
 
           <md-input-container class="input">
@@ -39,7 +39,7 @@
               <md-tooltip>Semester tahun akademik</md-tooltip>
             </md-icon>
             <label>Semester/Tahun Akademik</label>
-            <md-input  v-model="mhs.semester_tahun_akademik"></md-input>
+            <md-input type="number" v-model="mhs.semester_tahun_akademik" required></md-input>
           </md-input-container>
 
           <md-input-container class="input">
@@ -48,7 +48,7 @@
               <md-tooltip>Alamat rumah</md-tooltip>
             </md-icon>
             <label>Alamat rumah</label>
-            <md-textarea  v-model="mhs.alamat_rumah"></md-textarea>
+            <md-textarea  v-model="mhs.alamat_rumah" required></md-textarea>
           </md-input-container>
 
           <md-input-container class="input">
@@ -57,7 +57,7 @@
               <md-tooltip>Telepon</md-tooltip>
             </md-icon>
             <label>Telepon/Hp </label>
-            <md-input v-model="mhs.telepon"></md-input>
+            <md-input type="number" v-model="mhs.telepon" required></md-input>
           </md-input-container>
 
           <md-input-container class="input">
@@ -65,8 +65,8 @@
               assignment_turned_in
               <md-tooltip>Jumlah sesmter yang telah di selesaikan</md-tooltip>
             </md-icon>
-            <label>Jumlah semester yang telah di selesaikan</label>
-            <md-input  v-model="mhs.jumlah_semester_diselesaikan"></md-input>
+            <label>Jumlah semester di selesaikan</label>
+            <md-input type="number" v-model="mhs.jumlah_semester_diselesaikan" required></md-input>
           </md-input-container>
 
           <md-input-container class="input">
@@ -75,7 +75,7 @@
               <md-tooltip>Jumlah sks yang telah di peroleh</md-tooltip>
             </md-icon>
             <label>Jumlah SKS yang telah di peroleh</label>
-            <md-input  v-model="mhs.jumlah_sks_diperoleh "></md-input>
+            <md-input type="number" v-model="mhs.jumlah_sks_diperoleh " required></md-input>
           </md-input-container>
 
           <md-input-container class="input">
@@ -84,7 +84,7 @@
               <md-tooltip>IPK yang telah di peroleh</md-tooltip>
             </md-icon>
             <label>IPK yang telah diperoleh</label>
-            <md-input  v-model="mhs.ipk_diperoleh "></md-input>
+            <md-input type="number" v-model="mhs.ipk_diperoleh" required></md-input>
           </md-input-container>
 
           <md-input-container class="input">
@@ -93,7 +93,7 @@
               <md-tooltip>permohonan cuti akademik pada semester</md-tooltip>
             </md-icon>
             <label>Cuti akademik pada semester</label>
-            <md-input  v-model="mhs.cuti_di_semester "></md-input>
+            <md-input type="number" v-model="mhs.cuti_di_semester " required></md-input>
           </md-input-container>
 
           <md-input-container class="input">
@@ -102,7 +102,7 @@
               <md-tooltip>Tahun akademik</md-tooltip>
             </md-icon>
             <label>Tahun akademik </label>
-            <md-select name="movie" id="movie" v-model="mhs.cuti_tahun_akademik ">
+            <md-select name="movie" id="movie" v-model="mhs.cuti_tahun_akademik " required>
               <md-option v-for="item in 18" :value="2019 - item"> {{ 2019 - item }} </md-option>
             </md-select>
           </md-input-container>
@@ -113,7 +113,7 @@
               <md-tooltip>karena</md-tooltip>
             </md-icon>
             <label>Di karenakan </label>
-            <md-textarea v-model="mhs.karena"></md-textarea>
+            <md-textarea v-model="mhs.karena" required></md-textarea>
           </md-input-container>
 
           <md-input-container class="input">
@@ -121,8 +121,8 @@
               receipt
               <md-tooltip>dimana</md-tooltip>
             </md-icon>
-            <label>Di  *ex bogor</label>
-            <md-input v-model="mhs.di"></md-input>
+            <label>Ditempatkan</label>
+            <md-input v-model="mhs.di" required></md-input>
           </md-input-container>
         </div>
         <md-button class="md-raised md-primary" @click.native.prevent="sendCutiWs(mhs)">Kirim</md-button>

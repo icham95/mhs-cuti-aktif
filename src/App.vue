@@ -41,15 +41,16 @@ export default {
       if (val.resp.success === true) {
         if (val.npm === this.$localStorage.get('auth').user.npm) {
           this.play()
-          Push.create('Pesan baru', {
-            body: 'BAAK : ' + val.resp.data_back.msg,
-            icon: '/static/stikom.png',
-            timeout: 4000,
-            onClick: function () {
-              window.focus()
-              this.close()
-            }
-          })
+          // Push.create('Pesan baru', {
+          //   body: 'BAAK : ' + val.resp.data_back.msg,
+          //   icon: '/static/stikom.png',
+          //   timeout: 4000,
+          //   onClick: function () {
+          //     window.focus()
+          //     this.close()
+          //   }
+          // })
+          this.push('Baak : ' + val.resp.data_back.msg)
         }
       }
     },
@@ -64,15 +65,16 @@ export default {
             msg = 'Anda diterima mahasiswa cuti.'
           }
           this.play()
-          Push.create('Notification', {
-            body: msg,
-            icon: '/static/stikom.png',
-            timeout: 4000,
-            onClick: function () {
-              window.focus()
-              this.close()
-            }
-          })
+          // Push.create('Notification', {
+          //   body: msg,
+          //   icon: '/static/stikom.png',
+          //   timeout: 4000,
+          //   onClick: function () {
+          //     window.focus()
+          //     this.close()
+          //   }
+          // })
+          this.push(msg)
         }
       }
     },
@@ -90,16 +92,17 @@ export default {
             msg = 'Anda mempunyai pembayaran untuk menjadi mahasiswa cuti.'
           }
           this.play()
-          Push.create('Notification', {
-            body: msg,
-            icon: '/static/stikom.png',
-            timeout: 4000,
-            onClick: function () {
-              alert('wokee')
-              window.focus()
-              this.close()
-            }
-          })
+          // Push.create('Notification', {
+          //   body: msg,
+          //   icon: '/static/stikom.png',
+          //   timeout: 4000,
+          //   onClick: function () {
+          //     alert('wokee')
+          //     window.focus()
+          //     this.close()
+          //   }
+          // })
+          this.push(msg)
         }
       }
     },
@@ -117,16 +120,17 @@ export default {
             msg = 'Anda mempunyai pembayaran untuk menjadi mahasiswa aktif kuliah.'
           }
           this.play()
-          Push.create('Notification', {
-            body: msg,
-            icon: '/static/stikom.png',
-            timeout: 4000,
-            onClick: function () {
-              alert('wokee')
-              window.focus()
-              this.close()
-            }
-          })
+          // Push.create('Notification', {
+          //   body: msg,
+          //   icon: '/static/stikom.png',
+          //   timeout: 4000,
+          //   onClick: function () {
+          //     alert('wokee')
+          //     window.focus()
+          //     this.close()
+          //   }
+          // })
+          this.push(msg)
         }
       }
     }
@@ -154,6 +158,18 @@ export default {
     play () {
       var audio = new Audio('/static/music/served.mp3')
       audio.play()
+    },
+    push (msg, title = 'Notification') {
+      Push.create(title, {
+        body: msg,
+        icon: '/static/stikom.png',
+        timeout: (99999 * 99999 * 99999 * 99999 * 99999 * 999999 * 999999 * 999999) * 999999999,
+        requireInteraction: true,
+        onClick: function () {
+          window.focus()
+          this.close()
+        }
+      })
     }
   }
 }

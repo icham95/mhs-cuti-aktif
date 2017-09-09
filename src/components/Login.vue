@@ -3,7 +3,7 @@
     <md-card>
       <md-card-header>
         <div style="text-align:center;">
-          <md-icon class="md-size-4x md-primary">lock</md-icon>
+          <img src="/static/skm.png" style="width:100px;" alt="">
         </div>
       </md-card-header>
       <md-card-content>

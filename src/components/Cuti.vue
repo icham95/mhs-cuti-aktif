@@ -1,7 +1,7 @@
 <template>
   <div>
     
-    <div style="width:75%;margin:0 auto;">
+    <div style="width:100%;margin:0 auto;">
       <div style="background-color:#3f51b5; margin-bottom:10px;color:white;font-size:18px;margin-top:5px;">
         <div style="float:left;line-height:30px;padding-left:10px;">
           LIST CUTI
@@ -17,7 +17,7 @@
         <div style="clear:both;"></div>
       </div>
 
-      <md-card v-for="item in cutis" class="card " :class="cardChange(item.status)" style="">
+      <md-card v-for="item in cutis" class="card " :class="cardChange(item.status)">
         <div class="card-menu" style="">
           <button class="card-menu-btn" @click.prevent = "singleItem(item)">
             <md-icon>visibility</md-icon>
@@ -61,7 +61,7 @@
                   style="margin-top:10px;"
                   class="md-raised md-primary" 
                   @click.native.prevent = "item.toggle_pembayaran = true">
-                  Tampilkan form pembayaran
+                  form pembayaran
                   <md-icon v-if="item.toggle_pembayaran == false">keyboard_arrow_right</md-icon>
                 </md-button>
                 <md-button 
@@ -69,7 +69,7 @@
                   style="margin-top:10px;"
                   class="md-raised md-primary" 
                   @click.native.prevent = "item.toggle_pembayaran = false">
-                  Tampilkan form pembayaran
+                  form pembayaran
                   <md-icon v-if="item.toggle_pembayaran == true">keyboard_arrow_down</md-icon>
                 </md-button>
               </label>
@@ -495,7 +495,7 @@
   }
 </script>
 
-<style scoped>
+<style>
 .card-menu {
   width: auto;
   height:auto;
@@ -519,26 +519,25 @@
 
 .card {
   width:100%;float:left;margin-right:10px;margin-bottom:10px;position:relative;
-  background-color:rgba(0,180,0, 0.9);
+  background-color:rgba(0,180,0, 0.9) !important;
   color:white;
 }
 .card:hover > .card-menu {
   display:block;
   border-radius: 5px;
 }
-
 .red {
-  background-color:rgba(200, 0, 0, 0.8);
+  background-color:rgba(200, 0, 0, 0.8) !important;
 }
 /* teal = status 1 */
 .teal {
-  background-color:rgba(0,0,200, 0.8);
+  background-color:rgba(0,0,200, 0.8) !important;
 }
 
 .indianred {
-  background-color:rgba(150, 30, 10, 0.9);
+  background-color:rgba(150, 30, 10, 0.9) !important;
 }
 .sienna {
-  background-color:rgba(197, 135, 78, 0.8);
+  background-color:rgba(197, 135, 78, 0.8) !important;
 }
 </style>

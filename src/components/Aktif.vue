@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div style="width:75%;background-color:#3f51b5; margin:10px auto;color:white;font-size:18px;margin-top:5px;">
+  <div style="width:75%;margin: 0 auto;">
+    <div style="background-color:#3f51b5; margin:10px auto;color:white;font-size:18px;margin-top:5px;">
       <div style="float:left;line-height:30px;padding-left:10px;">
         LIST AKTIF
       </div>
@@ -486,7 +486,7 @@
 
 .card {
   width:100%;float:left;margin-right:10px;margin-bottom:10px;position:relative;
-  background-color:rgba(0,180,0, 0.9);
+  background-color:rgba(0,180,0, 0.9) !important;
   color:white;
 }
 .card:hover > .card-menu {
@@ -495,17 +495,17 @@
 }
 
 .red {
-  background-color:rgba(200, 0, 0, 0.8);
+  background-color:rgba(200, 0, 0, 0.8) !important;
 }
 /* teal = status 1 */
 .teal {
-  background-color:rgba(0,0,200, 0.8);
+  background-color:rgba(0,0,200, 0.8) !important;
 }
 
 .indianred {
-  background-color:rgba(150, 30, 10, 0.9);
+  background-color:rgba(150, 30, 10, 0.9) !important;
 }
 .sienna {
-  background-color:rgba(197, 135, 78, 0.8);
+  background-color:rgba(197, 135, 78, 0.8) !important;
 }
 </style>
